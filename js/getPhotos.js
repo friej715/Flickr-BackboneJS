@@ -7,7 +7,14 @@ function createPhotos(data) {
 	$.each(data.items, function(i, item){
 		var sourceSquare = (item.media.m);
 		var sourceSquare = (item.media.m).replace("_m.jpg", "_q.jpg");	
-		var photo = new App.Models.Photo({url:sourceSquare});
+
+		var sourceUrl = (item.link);
+
+		var sourceTitle = (item.title);
+		var photo = new App.Models.Photo({
+			thumb: sourceSquare, 
+			url:   sourceUrl, 
+			title: sourceTitle});
 		photoCollection.add(photo);
 	});
 	photoView.render();
