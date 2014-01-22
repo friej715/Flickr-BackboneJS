@@ -1,6 +1,6 @@
 var photoCollection = new App.Collections.PhotoCollection();
 
-$.getJSON("http://api.flickr.com/services/feeds/groups_pool.gne?id=998875@N22&lang=en-us&format=json&jsoncallback=?", createPhotos);
+$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?format=json&jsoncallback=?", createPhotos);
 var latestPhotos = new Array();
 
 function createPhotos(data) {
